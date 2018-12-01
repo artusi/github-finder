@@ -1,0 +1,7 @@
+# Unignore .eslintrc.js because they're ignored by default
+!.*rc.js
+
+# Storybook
+/**/stories/*
+
+/**/node_modules/*
