@@ -4,4 +4,6 @@ GitHub Finder
 
 - React
 - StoryBook
-- Css Modules
+- Styles: Css Modules
+- Tests: Jest
+- Router: react router
