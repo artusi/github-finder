@@ -1,14 +1,15 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+import Router from "components/Router";
+import routes from "config/routes";
 import styles from "./App.module.css";
 
 function App() {
   return (
     <div className={styles.app}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>
-          Hey! Github finder will be available soon! Stay tuned!!
-        </h1>
-      </header>
+      <Router routes={routes}>
+        <Redirect to="/404" />
+      </Router>
     </div>
   );
 }

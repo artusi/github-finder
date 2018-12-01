@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> renders 1`] = `
+<div
+  className="home"
+>
+  <header />
+  <p>
+    We are baking a new way to find your repos!
+  </p>
+</div>
+`;

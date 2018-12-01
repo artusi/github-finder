@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.madeBy {
+  padding: 16px;
+  margin: 24px;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #f37a6f;
+}
+
+.madeByLink {
+  color: #fff;
+}

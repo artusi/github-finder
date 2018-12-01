@@ -5,16 +5,18 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "prop-types": "^15.6.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "NODE_PATH=./src/app react-scripts start",
+    "build": "NODE_PATH=./src/app react-scripts build",
+    "test": "NODE_PATH=./src/app react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "fix": "eslint --fix ."
+    "storybook": "NODE_PATH=./src/app start-storybook -p 9009 -s public",
+    "build-storybook": "NODE_PATH=./src/app build-storybook -s public",
+    "fix": "NODE_PATH=src/app eslint --fix ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,10 +38,19 @@
       "git add"
     ]
   },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
   "devDependencies": {
     "@storybook/addon-actions": "^4.0.9",
     "@storybook/addon-links": "^4.0.9",
     "@storybook/react": "^4.0.9",
+    "classnames": "^2.2.6",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
@@ -47,6 +58,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.0",
+    "jest-styled-components": "^6.3.1",
     "lint-staged": "^8.1.0"
   }
 }

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Router /> renders > empty 1`] = `
+<BrowserRouter>
+  <Switch />
+</BrowserRouter>
+`;
+
+exports[`<Router /> renders > list 1`] = `
+<BrowserRouter>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      key="/"
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      key="/test-route"
+      path="/test-route"
+    />
+    <Route
+      component={[Function]}
+      key="/test-another-route"
+      path="/test-another-route"
+    />
+  </Switch>
+</BrowserRouter>
+`;
+
+exports[`<Router /> renders > list with children 1`] = `
+<BrowserRouter>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      key="/"
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      key="/test-route"
+      path="/test-route"
+    />
+    <Route
+      component={[Function]}
+      key="/test-another-route"
+      path="/test-another-route"
+    />
+    <span />
+  </Switch>
+</BrowserRouter>
+`;
