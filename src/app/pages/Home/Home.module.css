@@ -1,2 +1,12 @@
 .home {
 }
+.searchWrapper {
+  text-align: center;
+  margin: 0 auto;
+}
+.searchUser {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f2cd5d;
+  max-width: 420px;
+}
