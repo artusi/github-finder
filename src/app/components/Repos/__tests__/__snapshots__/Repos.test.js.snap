@@ -12,6 +12,42 @@ exports[`<Repos /> renders 1`] = `
 <div
   className="repos"
 >
-  Hey, Vegeta has 10.
+  <div
+    className="disclamer"
+  >
+    Hey, Vegeta has 2 repositories.
+  </div>
+  <div
+    className="reposList"
+  >
+    <div
+      className="reposListItem"
+      key="4521396"
+    >
+      <RepoCard
+        customClassName=""
+        description="JClip is a new way to make animations and control jpegs, you can use as a \\"gif\\" file or control like a Flash Movieclip."
+        id="4521396"
+        language="JavaScript"
+        name="jclip d asdnlkasdkas dlaks dlkas dlkas d lkda"
+        stars={1}
+        title="jclip d asdnlkasdkas dlaks dlkas dlkas d lkda"
+      />
+    </div>
+    <div
+      className="reposListItem"
+      key="58581481"
+    >
+      <RepoCard
+        customClassName=""
+        description="Some tests with alias"
+        id="58581481"
+        language="Not declared"
+        name="git-alias"
+        stars={0}
+        title="git-alias"
+      />
+    </div>
+  </div>
 </div>
 `;

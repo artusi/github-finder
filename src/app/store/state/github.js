@@ -8,7 +8,7 @@ const actions = {
 };
 
 export const defaultState = {
-  username: "artusi",
+  username: "",
   repos: {
     total: 0,
     byId: {},
@@ -83,7 +83,13 @@ const reposNormalizer = data => {
     // eslint-disable-next-line camelcase
     const { id, name, description, language, stargazers_count } = current;
     // eslint-disable-next-line no-param-reassign, camelcase
-    list[id] = { id, name, description, language, stargazers_count };
+    list[id] = {
+      id: id.toString(),
+      name,
+      description,
+      language: language || "Not declared",
+      stars: stargazers_count
+    };
     return list;
   }, {});
 
@@ -93,7 +99,7 @@ const reposNormalizer = data => {
 // Requests
 
 export function requestUserUpdate(username) {
-  const newUsername = username || defaultState.username;
+  const newUsername = username;
 
   return dispatch => {
     dispatch(loading(true));

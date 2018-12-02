@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RepoCard /> - render renders 1`] = `
+<div
+  className="repoCard "
+  id="repoCard-id"
+>
+  <div
+    className="header"
+  >
+    <p
+      className="title"
+    >
+      My awesome repo
+    </p>
+    <span
+      className="description"
+    />
+  </div>
+  <div
+    className="footer"
+  >
+    <ul
+      className="attributes"
+    >
+      <li
+        className="attributeItem"
+      >
+        <span
+          className="footerTitle"
+        >
+          Language: 
+        </span>
+      </li>
+      <li
+        className="attributeItem"
+      >
+        <span
+          className="footerTitle"
+        >
+          Stars: 
+        </span>
+        0
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<RepoCard /> - render renders with all props > prefix | defaultValue 1`] = `
+<div
+  className="repoCard customClass"
+  id="repoCard-id"
+>
+  <div
+    className="header"
+  >
+    <p
+      className="title"
+    >
+      My awesome repo
+    </p>
+    <span
+      className="description"
+    >
+      Lololo lol lo lo lo lo lo 
+    </span>
+  </div>
+  <div
+    className="footer"
+  >
+    <ul
+      className="attributes"
+    >
+      <li
+        className="attributeItem"
+      >
+        <span
+          className="footerTitle"
+        >
+          Language: 
+        </span>
+      </li>
+      <li
+        className="attributeItem"
+      >
+        <span
+          className="footerTitle"
+        >
+          Stars: 
+        </span>
+        10
+      </li>
+    </ul>
+  </div>
+</div>
+`;
