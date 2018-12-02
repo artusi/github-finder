@@ -30,3 +30,9 @@ An app that connect to the Github API, and list all public repositories from an 
 - UI SearchField and SubimitButton were added
 - Improving test coverage
 - Adding a request to mock data because GithubApi has a limit
+
+**0.0.4 - List repos**
+
+- Impoving redux store for repositories
+- UI RepoCard added
+- Listing repos
