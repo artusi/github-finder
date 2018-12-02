@@ -4,7 +4,7 @@ import Router from "components/Router";
 import routes from "config/routes";
 import styles from "./App.module.css";
 
-function App() {
+export function App() {
   return (
     <div className={styles.app}>
       <Router routes={routes}>

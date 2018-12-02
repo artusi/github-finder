@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders 1`] = `
+<header
+  className="header"
+>
+  <h1
+    className="title"
+  >
+    Github finder
+  </h1>
+  <span
+    className="madeBy"
+  >
+    Made by
+     
+    <a
+      className="madeByLink"
+      href="http://artusi.com.br"
+    >
+      Rafael Artusi
+    </a>
+  </span>
+</header>
+`;

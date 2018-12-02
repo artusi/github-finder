@@ -7,6 +7,11 @@ const routes = [
     component: Home
   },
   {
+    path: "/:username",
+    exact: true,
+    component: Home
+  },
+  {
     path: "/404",
     component: NotFound
   }

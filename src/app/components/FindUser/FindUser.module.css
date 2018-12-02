@@ -1,0 +1,13 @@
+.findUser {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f2cd5d;
+  max-width: 420px;
+}
+
+@media (max-width: 400px) {
+  .findUser {
+    width: 270px;
+    margin: 10px auto;
+  }
+}

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Repos /> renders > with initial user 1`] = `
+<div
+  className="repos"
+>
+  Sorry but we couldn't find this user ;-(
+</div>
+`;
+
+exports[`<Repos /> renders 1`] = `
+<div
+  className="repos"
+>
+  Hey, Vegeta has 10.
+</div>
+`;

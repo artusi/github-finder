@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Header.module.css";
 
-function Header() {
+export function Header() {
   return (
     <header className={styles.header}>
       <h1 className={styles.title}>Github finder</h1>

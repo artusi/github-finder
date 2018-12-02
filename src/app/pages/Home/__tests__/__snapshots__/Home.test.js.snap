@@ -4,9 +4,15 @@ exports[`<Home /> renders 1`] = `
 <div
   className="home"
 >
-  <header />
-  <p>
-    We are baking a new way to find your repos!
-  </p>
+  <Header />
+  <Connect(FindUser)
+    initialUser="artusi"
+    onUpdateUser={[Function]}
+  />
+  <div
+    className="reposWrapper"
+  >
+    <Connect(Repos) />
+  </div>
 </div>
 `;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SubmitButton /> - render renders 1`] = `
+<button
+  className="submitButton "
+  disabled={false}
+  id="submitButton"
+  onClick={[MockFunction]}
+  type="button"
+>
+  Test submit
+</button>
+`;
+
+exports[`<SubmitButton /> - render renders with all props > customClassName | disabled 1`] = `
+<button
+  className="submitButton lol-my-class"
+  disabled={true}
+  id="submitButton"
+  onClick={[MockFunction]}
+  type="button"
+>
+  Test submit
+</button>
+`;

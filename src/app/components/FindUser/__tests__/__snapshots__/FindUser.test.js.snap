@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FindUser /> renders > with initial user 1`] = `
+<div
+  className="findUser"
+>
+  <SearchField
+    defaultValue="kakaroto"
+    id="findUser"
+    label="Search a GitHub user:"
+    onClick={[Function]}
+    prefix="https://github.com/"
+  />
+</div>
+`;
+
+exports[`<FindUser /> renders 1`] = `
+<div
+  className="findUser"
+>
+  <SearchField
+    defaultValue=""
+    id="findUser"
+    label="Search a GitHub user:"
+    onClick={[Function]}
+    prefix="https://github.com/"
+  />
+</div>
+`;

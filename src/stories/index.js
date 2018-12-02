@@ -1,13 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { linkTo } from "@storybook/addon-links";
 
-import { Button, Welcome } from '@storybook/react/demo';
+import { Welcome } from "@storybook/react/demo";
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+import { SearchField, SubmitButton } from "../app/ui";
 
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
+storiesOf("Welcome", module).add("to Storybook", () => (
+  <Welcome showApp={linkTo("SearchField")} />
+));
+
+storiesOf("SubmitButton", module).add("with text", () => (
+  <SubmitButton onClick={action("clicked")}>SubmitButton Button</SubmitButton>
+));
+
+storiesOf("SearchField", module).add("with text", () => (
+  <SearchField
+    id="MySearchField"
+    onClick={action("clicked")}
+    label="Search this"
+  />
+));

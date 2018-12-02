@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="app"
+>
+  <Router
+    routes={
+      Array [
+        Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/",
+        },
+        Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/:username",
+        },
+        Object {
+          "component": [Function],
+          "path": "/404",
+        },
+      ]
+    }
+  >
+    <Redirect
+      push={false}
+      to="/404"
+    />
+  </Router>
+</div>
+`;

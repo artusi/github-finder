@@ -1,23 +1,29 @@
 import { fetchUser } from "../services/github-services";
 
 const actions = {
-  UPDATE_USERNAME: "github/update-user",
+  UPDATE_USER: "github/update-user",
   ERROR: "github/error",
   LOADING: "github/loading"
 };
 
 export const defaultState = {
   username: "artusi",
+  repos: {
+    total: 0,
+    list: []
+  },
   loading: false,
-  error: ""
+  error: false
 };
 
 export function reducer(state = defaultState, action = {}) {
   switch (action.type) {
-    case actions.UPDATE_USERNAME:
+    case actions.UPDATE_USER:
       return {
         ...state,
-        usename: action.value
+        username: action.value.username,
+        repos: { ...action.value.repos },
+        error: false
       };
 
     case actions.LOADING:
@@ -40,7 +46,7 @@ export function reducer(state = defaultState, action = {}) {
 export default reducer;
 
 export function updateUser(value) {
-  return { type: actions.UPDATE_USERNAME, value };
+  return { type: actions.UPDATE_USER, value };
 }
 
 export function loading(value) {
@@ -57,8 +63,21 @@ export function requestUserUpdate(username) {
   return dispatch => {
     dispatch(loading(true));
 
-    return fetchUser(newUsername).then(() => {
-      dispatch(updateUser(newUsername));
+    return fetchUser(newUsername).then(data => {
+      if (data && data.message === "Not Found") {
+        dispatch(error(true));
+      } else {
+        // parse data
+        const normalized = {
+          repos: {
+            total: data.length,
+            list: data
+          },
+          username: newUsername
+        };
+
+        dispatch(updateUser(normalized));
+      }
       dispatch(loading(false));
     });
   };

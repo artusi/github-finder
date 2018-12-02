@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchField /> - render renders 1`] = `
+<div
+  className="searchField"
+>
+  <label
+    className="label"
+    htmlFor="searchTest"
+  >
+    Test label for the glory
+  </label>
+  <div
+    className="inputContainer"
+  >
+    <span
+      className="prefix"
+    />
+    <input
+      className="fieldInput"
+      id="searchTest-input"
+      name="searchTest"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </div>
+  <SubmitButton
+    customClassName=""
+    disabled={true}
+    id="submitSearchField"
+    onClick={[Function]}
+  >
+    Find!
+  </SubmitButton>
+</div>
+`;
+
+exports[`<SearchField /> - render renders with all props > prefix | defaultValue 1`] = `
+<div
+  className="searchField"
+>
+  <label
+    className="label"
+    htmlFor="searchTest"
+  >
+    Test label for the glory
+  </label>
+  <div
+    className="inputContainer"
+  >
+    <span
+      className="prefix"
+    >
+      http://youtube.com/
+    </span>
+    <input
+      className="fieldInput"
+      id="searchTest-input"
+      name="searchTest"
+      onChange={[Function]}
+      type="text"
+      value="mkbhd"
+    />
+  </div>
+  <SubmitButton
+    customClassName=""
+    disabled={false}
+    id="submitSearchField"
+    onClick={[Function]}
+  >
+    Find!
+  </SubmitButton>
+</div>
+`;
