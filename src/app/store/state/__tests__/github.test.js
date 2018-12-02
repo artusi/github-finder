@@ -15,10 +15,42 @@ describe("github > actions", () => {
 
     const stateAfter = {
       ...defaultState,
-      username: "artusi",
+      username: "artusi"
+    };
+
+    deepFreeze(stateBefore);
+
+    expect(reducer(stateBefore, bundle.updateUser("artusi"))).toEqual(
+      stateAfter
+    );
+  });
+
+  it("POPULATE_REPOS", () => {
+    const stateBefore = {
+      ...defaultState
+    };
+
+    const stateAfter = {
+      ...defaultState,
       repos: {
-        total: 5,
-        list: [{}, {}, {}, {}, {}]
+        total: 2,
+        byId: {
+          "1": {
+            id: "1",
+            name: "one",
+            description: "one d",
+            language: "",
+            stargazers_count: 1
+          },
+          "2": {
+            id: "2",
+            name: "two",
+            description: "two d",
+            language: "js",
+            stargazers_count: 0
+          }
+        },
+        all: ["1", "2"]
       }
     };
 
@@ -27,16 +59,30 @@ describe("github > actions", () => {
     expect(
       reducer(
         stateBefore,
-        bundle.updateUser({
-          username: "artusi",
-          repos: {
-            total: 5,
-            list: [{}, {}, {}, {}, {}]
-          }
+        bundle.populateRepos({
+          total: 2,
+          byId: {
+            "1": {
+              id: "1",
+              name: "one",
+              description: "one d",
+              language: "",
+              stargazers_count: 1
+            },
+            "2": {
+              id: "2",
+              name: "two",
+              description: "two d",
+              language: "js",
+              stargazers_count: 0
+            }
+          },
+          all: ["1", "2"]
         })
       )
     ).toEqual(stateAfter);
   });
+
   it("LOADING", () => {
     const stateBefore = {
       ...defaultState
