@@ -5,7 +5,7 @@
 }
 .madeBy {
   padding: 16px;
-  margin: 24px;
+  margin: 24px 0;
   border-radius: 10px;
   font-size: 12px;
   background-color: #f37a6f;
@@ -13,4 +13,10 @@
 
 .madeByLink {
   color: #fff;
+}
+
+@media (max-width: 400px) {
+  .madeBy {
+    margin: 24px 8px;
+  }
 }

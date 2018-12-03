@@ -1,0 +1,19 @@
+.repository {
+}
+.report {
+  margin: 16px 0;
+  text-align: left;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 400px) {
+  .report {
+    margin: 16px 8px;
+  }
+  .info {
+    margin: 0 8px;
+  }
+}

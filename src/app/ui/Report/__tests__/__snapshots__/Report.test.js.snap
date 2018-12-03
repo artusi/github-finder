@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Report /> - render renders 1`] = `""`;
+
+exports[`<Report /> - render renders with all props > prefix | defaultValue 1`] = `
+<table
+  className="report "
+  id="report-id"
+>
+  <tbody>
+    <tr
+      className="row undefined"
+      key="row1"
+    >
+      <td
+        className="cell 1 class"
+        key="row10"
+      >
+        1 content
+      </td>
+      <td
+        className="cell 2class"
+        key="row11"
+      >
+        2 content
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

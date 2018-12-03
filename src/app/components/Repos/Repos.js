@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { RepoCard } from "ui";
+
 import styles from "./Repos.module.css";
 
 export function Repos({ github }) {
@@ -22,7 +23,11 @@ export function Repos({ github }) {
           const title = currentRepo.name;
           return (
             <div key={currentRepo.id} className={styles.reposListItem}>
-              <RepoCard {...currentRepo} title={title} />
+              <RepoCard
+                {...currentRepo}
+                title={title}
+                linkFinderPath={`${username}/${title}`}
+              />
             </div>
           );
         })}

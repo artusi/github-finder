@@ -1,6 +1,7 @@
-import { fetchUser } from "../services/github-services";
+import { fetchUser, fetchRepositoryCommits } from "../services/github-services";
 
 const actions = {
+  POPULATE_COMMITS: "github/populate-commits",
   POPULATE_REPOS: "github/populate-repositories",
   UPDATE_USER: "github/update-user",
   ERROR: "github/error",
@@ -13,6 +14,13 @@ export const defaultState = {
     total: 0,
     byId: {},
     all: []
+  },
+  currentRepo: {
+    name: "",
+    commits: {
+      total: 0,
+      list: []
+    }
   },
   loading: false,
   error: false
@@ -31,6 +39,13 @@ export function reducer(state = defaultState, action = {}) {
       return {
         ...state,
         repos: { ...action.value },
+        error: false
+      };
+
+    case actions.POPULATE_COMMITS:
+      return {
+        ...state,
+        currentRepo: { ...action.value },
         error: false
       };
 
@@ -57,6 +72,14 @@ export function updateUser(value) {
   return { type: actions.UPDATE_USER, value };
 }
 export function populateRepos(value) {
+  return { type: actions.POPULATE_REPOS, value };
+}
+
+export function populateCommits(value) {
+  return { type: actions.POPULATE_COMMITS, value };
+}
+
+export function populateCommit(value) {
   return { type: actions.POPULATE_REPOS, value };
 }
 
@@ -96,8 +119,27 @@ const reposNormalizer = data => {
   return { total, all, byId };
 };
 
-// Requests
+const commitsNormalizer = data => {
+  const total = data.length;
 
+  const list = data.reduce((commitList, current) => {
+    // eslint-disable-next-line camelcase
+    const id = current.sha;
+    const { author, message } = current.commit;
+    // eslint-disable-next-line no-param-reassign, camelcase
+    commitList.push({
+      id,
+      description: message,
+      author: author.name,
+      url: current.html_url
+    });
+    return commitList;
+  }, []);
+
+  return { total, list };
+};
+
+// Requests
 export function requestUserUpdate(username) {
   const newUsername = username;
 
@@ -110,6 +152,34 @@ export function requestUserUpdate(username) {
       } else {
         dispatch(populateRepos(reposNormalizer(data)));
         dispatch(updateUser(newUsername));
+      }
+      dispatch(loading(false));
+    });
+  };
+}
+
+export function requestRepository(githubUser, repoName) {
+  return (dispatch, getState) => {
+    dispatch(loading(true));
+    dispatch(populateCommits(defaultState.currentRepo));
+
+    return fetchRepositoryCommits(githubUser, repoName).then(data => {
+      if (data && data.message) {
+        dispatch(error(true));
+      } else {
+        // No gitUser or different user
+        const { username } = getState().github;
+        if (!username || username !== githubUser) {
+          dispatch(updateUser(githubUser));
+        }
+
+        // Set current repo
+        const currentRepo = {
+          name: repoName,
+          commits: commitsNormalizer(data)
+        };
+
+        dispatch(populateCommits(currentRepo));
       }
       dispatch(loading(false));
     });

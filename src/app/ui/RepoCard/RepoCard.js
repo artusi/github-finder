@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import styles from "./RepoCard.module.css";
 
 export function RepoCard({
   id,
   customClassName,
   title,
+  linkFinderPath,
   description,
   language,
   stars
@@ -16,7 +18,14 @@ export function RepoCard({
       className={`${styles.repoCard} ${customClassName}`}
     >
       <div className={styles.header}>
-        <p className={styles.title}>{title}</p>
+        {linkFinderPath ? (
+          <Link className={styles.titleLink} to={linkFinderPath}>
+            {title}
+          </Link>
+        ) : (
+          <p className={styles.title}>{title}</p>
+        )}
+
         <span className={styles.description}>{description}</span>
       </div>
       <div className={styles.footer}>
@@ -38,6 +47,7 @@ export function RepoCard({
 RepoCard.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  linkFinderPath: PropTypes.string,
   description: PropTypes.string,
   language: PropTypes.string,
   stars: PropTypes.number,
@@ -45,6 +55,7 @@ RepoCard.propTypes = {
 };
 
 RepoCard.defaultProps = {
+  linkFinderPath: "",
   customClassName: "",
   description: "",
   language: "",

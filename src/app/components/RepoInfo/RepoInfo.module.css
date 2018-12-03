@@ -1,0 +1,16 @@
+.repoInfo {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f37a6f;
+  max-width: 420px;
+}
+.infoItem {
+  color: #00324d;
+  font-weight: bold;
+}
+
+@media (max-width: 400px) {
+  .repoInfo {
+    width: 220px;
+  }
+}

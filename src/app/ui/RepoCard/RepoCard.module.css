@@ -19,6 +19,14 @@
   margin: 0 0 8px;
   padding: 0;
 }
+.titleLink {
+  composes: title;
+  color: #00324d;
+  display: block;
+}
+.titleLink:hover {
+  text-decoration: none;
+}
 .description {
   font-size: 12px;
   color: #00324d;

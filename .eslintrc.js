@@ -20,6 +20,7 @@ module.exports = {
     "react/jsx-filename-extension": "off",
     "react/forbid-prop-types": "off",
     "react/destructuring-assignment": "off",
-    "jsx-a11y/label-has-for": "off"
+    "jsx-a11y/label-has-for": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 };

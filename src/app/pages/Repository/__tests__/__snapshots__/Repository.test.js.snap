@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Repository /> renders 1`] = `
+<div
+  className="repository"
+>
+  <Header />
+  <div
+    className="info"
+  >
+    <Connect(RepoInfo)
+      repositoryName="git-finder"
+      username="artusi"
+    />
+    <SubmitButton
+      customClassName=""
+      disabled={false}
+      id="btnReturnToListRepo"
+      onClick={[Function]}
+    >
+      Voltar
+    </SubmitButton>
+  </div>
+  <div
+    className="report"
+  >
+    <Connect(CommitsList) />
+  </div>
+</div>
+`;

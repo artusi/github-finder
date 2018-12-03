@@ -6,7 +6,7 @@ import { linkTo } from "@storybook/addon-links";
 
 import { Welcome } from "@storybook/react/demo";
 
-import { SearchField, SubmitButton } from "../app/ui";
+import { SearchField, SubmitButton, RepoCard, Report } from "../app/ui";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("SearchField")} />
@@ -37,3 +37,25 @@ storiesOf("RepoCard", module)
       stars={10}
     />
   ));
+
+storiesOf("Report", module).add("basic report with data", () => (
+  <Report
+    id="id"
+    list={[
+      {
+        id: "row1",
+        cells: [
+          { content: "1 content", customClass: "1 class" },
+          { content: "2 content", customClass: "2class" }
+        ]
+      },
+      {
+        id: "row2",
+        cells: [
+          { content: "1 content", customClass: "1 class" },
+          { content: "2 content", customClass: "2class" }
+        ]
+      }
+    ]}
+  />
+));

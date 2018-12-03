@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RepoInfo /> renders > with initial user 1`] = `
+<div
+  className="repoInfo"
+>
+  Hey you are seeing
+  <span
+    className="infoItem"
+  >
+      another-repo 
+  </span>
+  from
+  <span
+    className="infoItem"
+  >
+     artusi
+  </span>
+</div>
+`;
+
+exports[`<RepoInfo /> renders 1`] = `
+<div
+  className="repoInfo"
+>
+  Hey you are seeing
+  <span
+    className="infoItem"
+  >
+      another-repo 
+  </span>
+  from
+  <span
+    className="infoItem"
+  >
+     artusi
+  </span>
+</div>
+`;

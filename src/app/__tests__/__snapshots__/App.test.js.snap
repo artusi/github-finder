@@ -19,6 +19,11 @@ exports[`renders without crashing 1`] = `
         },
         Object {
           "component": [Function],
+          "exact": true,
+          "path": "/:username/:repository",
+        },
+        Object {
+          "component": [Function],
           "path": "/404",
         },
       ]
