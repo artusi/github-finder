@@ -62,3 +62,7 @@ An app that connect to the Github API, and list all public repositories from an 
 - Added sorting repos
 - UI OptionSelect added
 - Impoving redux store for sort
+
+**1.2.0 - Endless scroll**
+
+- Added endless scroll

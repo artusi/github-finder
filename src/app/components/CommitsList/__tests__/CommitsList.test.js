@@ -4,6 +4,9 @@ import { CommitsList } from "../CommitsList";
 describe("<CommitsList />", () => {
   const initialProps = {
     error: false,
+    hasMore: true,
+    page: 1,
+    requestIncrementCommits: jest.fn(),
     commits: {
       total: 2,
       list: [
