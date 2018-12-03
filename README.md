@@ -2,6 +2,14 @@
 
 An app that connect to the Github API, and list all public repositories from an user, and the last commits for the repositories.
 
+## Run the project
+
+- `git clone git@github.com:artusi/github-finder.git`
+- `cd github-finder`
+- `yarn install`
+- `yarn start`
+- Profit ;-) and `yarn test`
+
 ## Project stack
 
 - Framework: React
@@ -10,6 +18,7 @@ An app that connect to the Github API, and list all public repositories from an 
 - Styles: CSS Modules
 - Tests: Jest
 - Router: React router
+- ES6: Destructuring easy way to navigate through object, Arrow Functions easier to write (but not to test ;-)), Promises.
 
 ## Project progression
 
@@ -43,3 +52,7 @@ An app that connect to the Github API, and list all public repositories from an 
 - UI Report added
 - Adding new page /:username/:repository
 - improving tests
+
+**1.0.0 - R E L E A S E**
+
+- Update READE.ME
