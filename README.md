@@ -36,3 +36,10 @@ An app that connect to the Github API, and list all public repositories from an 
 - Impoving redux store for repositories
 - UI RepoCard added
 - Listing repos
+
+**0.0.5 - List commits**
+
+- Impoving redux store for currentRepo
+- UI Report added
+- Adding new page /:username/:repository
+- improving tests
