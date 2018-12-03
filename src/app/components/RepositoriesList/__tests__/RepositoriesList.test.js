@@ -1,7 +1,7 @@
 import React from "react";
-import { Repos } from "../Repos";
+import { RepositoriesList } from "../RepositoriesList";
 
-describe("<Repos />", () => {
+describe("<RepositoriesList />", () => {
   const initialProps = {
     requestSortUpdate: jest.fn(),
     github: {
@@ -32,7 +32,7 @@ describe("<Repos />", () => {
   };
 
   it("renders", () => {
-    const wrapper = shallow(<Repos {...initialProps} />);
+    const wrapper = shallow(<RepositoriesList {...initialProps} />);
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -41,7 +41,7 @@ describe("<Repos />", () => {
     const propsWithError = { ...initialProps };
     propsWithError.github.error = true;
 
-    const wrapper = shallow(<Repos {...propsWithError} />);
+    const wrapper = shallow(<RepositoriesList {...propsWithError} />);
 
     expect(wrapper).toMatchSnapshot();
   });

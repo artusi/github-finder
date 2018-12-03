@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Header from "components/Header";
 import FindUser from "components/FindUser";
-import Repos from "components/Repos";
+import RepositoriesList from "components/RepositoriesList";
 import styles from "./Home.module.css";
 
 export class Home extends Component {
@@ -24,7 +24,7 @@ export class Home extends Component {
         <Header />
         <FindUser initialUser={initialUser} onUpdateUser={this.onUpdateUser} />
         <div className={styles.reposWrapper}>
-          <Repos />
+          <RepositoriesList />
         </div>
       </div>
     );

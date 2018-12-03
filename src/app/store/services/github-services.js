@@ -1,6 +1,7 @@
 import fetch from "isomorphic-fetch";
 
 const gitHubApi = "https://api.github.com/";
+// TODO: This key should be handle by the server not here
 const key = "a7b8864a2af23c351ae0a50bc9aa3adc57810b8b";
 
 export function fetchUser(username, sortBy) {
