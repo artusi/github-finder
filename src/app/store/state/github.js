@@ -19,6 +19,8 @@ export const defaultState = {
   },
   currentRepo: {
     name: "",
+    page: 1,
+    hasMore: true,
     commits: {
       total: 0,
       list: []
@@ -90,10 +92,6 @@ export function populateRepos(value) {
 
 export function populateCommits(value) {
   return { type: actions.POPULATE_COMMITS, value };
-}
-
-export function populateCommit(value) {
-  return { type: actions.POPULATE_REPOS, value };
 }
 
 export function loading(value) {
@@ -203,10 +201,44 @@ export function requestRepository(githubUser, repoName) {
         // Set current repo
         const currentRepo = {
           name: repoName,
+          page: 1,
+          hasMore: true,
           commits: commitsNormalizer(data)
         };
 
         dispatch(populateCommits(currentRepo));
+      }
+      dispatch(loading(false));
+    });
+  };
+}
+
+export function requestIncrementCommits() {
+  return (dispatch, getState) => {
+    dispatch(loading(true));
+
+    const { username, currentRepo } = getState().github;
+    const { page, name, commits } = currentRepo;
+    const newPage = page + 1;
+
+    return fetchRepositoryCommits(username, name, newPage).then(data => {
+      if (data && data.message) {
+        dispatch(error(true));
+      } else {
+        // Set current repo
+        const newCommits = commitsNormalizer(data);
+        const newList = [...commits.list, ...newCommits.list];
+        const incrementedRepo = {
+          name,
+          page: newPage,
+          hasMore: newCommits.total !== 0,
+          commits: {
+            total: newList.length,
+            list: newList
+          }
+        };
+
+        dispatch(populateCommits(incrementedRepo));
       }
       dispatch(loading(false));
     });

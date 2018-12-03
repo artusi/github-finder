@@ -10,64 +10,79 @@ exports[`<CommitsList /> renders 1`] = `
   <div
     className="commitsReport"
   >
-    <Report
-      customClassName=""
-      id="commits-report"
-      list={
-        Array [
-          Object {
-            "cells": Array [
-              Object {
-                "content": <a
-                  href="https://github.com/artusi/jclip/commit/e3eff3dc09b004a45aeb19db66d403a482163922"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Go to commit -> e3eff3dc09b004a45aeb19db66d403a482163922"
-                >
-                  e3eff3dc09
-                </a>,
-                "customClass": "idCell",
-              },
-              Object {
-                "content": "Merge pull request #3 from adriancmiranda/patch-1
+    <InfiniteScroll
+      element="div"
+      getScrollParent={null}
+      hasMore={true}
+      initialLoad={false}
+      isReverse={false}
+      loadMore={[MockFunction]}
+      loader={null}
+      pageStart={1}
+      ref={null}
+      threshold={250}
+      useCapture={false}
+      useWindow={true}
+    >
+      <Report
+        customClassName=""
+        id="commits-report"
+        list={
+          Array [
+            Object {
+              "cells": Array [
+                Object {
+                  "content": <a
+                    href="https://github.com/artusi/jclip/commit/e3eff3dc09b004a45aeb19db66d403a482163922"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title="Go to commit -> e3eff3dc09b004a45aeb19db66d403a482163922"
+                  >
+                    e3eff3dc09
+                  </a>,
+                  "customClass": "idCell",
+                },
+                Object {
+                  "content": "Merge pull request #3 from adriancmiranda/patch-1
 
 Update README.md",
-                "customClass": "descriptionCell",
-              },
-              Object {
-                "content": "Rafael Artusi",
-                "customClass": "authorCell",
-              },
-            ],
-            "id": "e3eff3dc09b004a45aeb19db66d403a482163922",
-          },
-          Object {
-            "cells": Array [
-              Object {
-                "content": <a
-                  href="https://github.com/artusi/jclip/commit/2bb637c960af94a9c5436849a3aa73dfdf36fc88"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Go to commit -> 2bb637c960af94a9c5436849a3aa73dfdf36fc88"
-                >
-                  2bb637c960
-                </a>,
-                "customClass": "idCell",
-              },
-              Object {
-                "content": "Update README.md",
-                "customClass": "descriptionCell",
-              },
-              Object {
-                "content": "Adrian Miranda",
-                "customClass": "authorCell",
-              },
-            ],
-            "id": "2bb637c960af94a9c5436849a3aa73dfdf36fc88",
-          },
-        ]
-      }
-    />
+                  "customClass": "descriptionCell",
+                },
+                Object {
+                  "content": "Rafael Artusi",
+                  "customClass": "authorCell",
+                },
+              ],
+              "id": "e3eff3dc09b004a45aeb19db66d403a4821639220",
+            },
+            Object {
+              "cells": Array [
+                Object {
+                  "content": <a
+                    href="https://github.com/artusi/jclip/commit/2bb637c960af94a9c5436849a3aa73dfdf36fc88"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title="Go to commit -> 2bb637c960af94a9c5436849a3aa73dfdf36fc88"
+                  >
+                    2bb637c960
+                  </a>,
+                  "customClass": "idCell",
+                },
+                Object {
+                  "content": "Update README.md",
+                  "customClass": "descriptionCell",
+                },
+                Object {
+                  "content": "Adrian Miranda",
+                  "customClass": "authorCell",
+                },
+              ],
+              "id": "2bb637c960af94a9c5436849a3aa73dfdf36fc881",
+            },
+          ]
+        }
+      />
+    </InfiniteScroll>
   </div>
 </div>
 `;
