@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OptionSelect /> - render renders 1`] = `
+<select
+  className="optionSelect "
+  disabled={false}
+  id="sortRepos"
+  onChange={[Function]}
+  value=""
+>
+  <option
+    key="name"
+    value="name"
+  >
+    name
+  </option>
+  <option
+    key="updated"
+    value="updated"
+  >
+    updated
+  </option>
+  <option
+    key="stars"
+    value="stars"
+  >
+    stars
+  </option>
+</select>
+`;
+
+exports[`<OptionSelect /> - render renders with all props > customClassName | disabled 1`] = `
+<select
+  className="optionSelect custom"
+  disabled={true}
+  id="sortRepos"
+  onChange={[Function]}
+  value="updated"
+>
+  <option
+    key="name"
+    value="name"
+  >
+    name
+  </option>
+  <option
+    key="updated"
+    value="updated"
+  >
+    updated
+  </option>
+  <option
+    key="stars"
+    value="stars"
+  >
+    stars
+  </option>
+</select>
+`;

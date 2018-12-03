@@ -15,7 +15,43 @@ exports[`<Repos /> renders 1`] = `
   <div
     className="disclamer"
   >
-    Hey, Vegeta has 2 repositories.
+    <div
+      className="info"
+    >
+      Hey, 
+      Vegeta
+       has 
+      2
+       repositories.
+    </div>
+    <div
+      className="sorter"
+    >
+      Sort by:
+      <OptionSelect
+        customClassName=""
+        disabled={false}
+        id="sortRepos"
+        initialValue=""
+        onChange={[Function]}
+        options={
+          Array [
+            Object {
+              "label": "Name",
+              "value": "full_name",
+            },
+            Object {
+              "label": "Updated",
+              "value": "updated",
+            },
+            Object {
+              "label": "Created",
+              "value": "created",
+            },
+          ]
+        }
+      />
+    </div>
   </div>
   <div
     className="reposList"
