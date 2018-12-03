@@ -3,8 +3,10 @@ import fetch from "isomorphic-fetch";
 
 const gitHubApi = "https://api.github.com/";
 
-export function fetchUser(username) {
-  const url = encodeURI(`${gitHubApi}users/${username}/repos?per_page=100`);
+export function fetchUser(username, sortBy) {
+  const url = encodeURI(
+    `${gitHubApi}users/${username}/repos?per_page=100&sort=${sortBy}`
+  );
 
   // return requestRepos(url);
 

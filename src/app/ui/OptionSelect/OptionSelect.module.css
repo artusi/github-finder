@@ -1,0 +1,25 @@
+.submitButton {
+  font-weight: bold;
+  padding: 6px 10px;
+  background: #00324d;
+  color: #fff;
+  border: 2px solid #00324d;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background: #fff;
+  color: #00324d;
+}
+
+.submitButton:disabled {
+  background: #5b6d77;
+  border-color: #5b6d77;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.submitButton:disabled:hover {
+  background: #5b6d77;
+  color: #fff;
+}

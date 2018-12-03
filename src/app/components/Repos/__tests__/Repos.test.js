@@ -3,6 +3,7 @@ import { Repos } from "../Repos";
 
 describe("<Repos />", () => {
   const initialProps = {
+    requestSortUpdate: jest.fn(),
     github: {
       error: false,
       username: "Vegeta",

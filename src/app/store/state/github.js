@@ -3,6 +3,7 @@ import { fetchUser, fetchRepositoryCommits } from "../services/github-services";
 const actions = {
   POPULATE_COMMITS: "github/populate-commits",
   POPULATE_REPOS: "github/populate-repositories",
+  UPDATE_SORT: "github/update-sort",
   UPDATE_USER: "github/update-user",
   ERROR: "github/error",
   LOADING: "github/loading"
@@ -10,6 +11,7 @@ const actions = {
 
 export const defaultState = {
   username: "",
+  sort: "name",
   repos: {
     total: 0,
     byId: {},
@@ -32,6 +34,12 @@ export function reducer(state = defaultState, action = {}) {
       return {
         ...state,
         username: action.value,
+        error: false
+      };
+    case actions.UPDATE_SORT:
+      return {
+        ...state,
+        sort: action.value,
         error: false
       };
 
@@ -71,6 +79,11 @@ export default reducer;
 export function updateUser(value) {
   return { type: actions.UPDATE_USER, value };
 }
+
+export function updateSort(value) {
+  return { type: actions.UPDATE_SORT, value };
+}
+
 export function populateRepos(value) {
   return { type: actions.POPULATE_REPOS, value };
 }
@@ -143,10 +156,12 @@ const commitsNormalizer = data => {
 export function requestUserUpdate(username) {
   const newUsername = username;
 
-  return dispatch => {
+  return (dispatch, getState) => {
     dispatch(loading(true));
 
-    return fetchUser(newUsername).then(data => {
+    const { sort } = getState().github;
+
+    return fetchUser(newUsername, sort).then(data => {
       if (data && data.message) {
         dispatch(error(true));
       } else {
@@ -155,6 +170,18 @@ export function requestUserUpdate(username) {
       }
       dispatch(loading(false));
     });
+  };
+}
+
+// Requests
+export function requestSortUpdate(sort) {
+  return (dispatch, getState) => {
+    const { username } = getState().github;
+
+    dispatch(loading(true));
+    dispatch(updateSort(sort));
+    // Request list from github again ( could sort by myself but this is more relieable)
+    dispatch(requestUserUpdate(username));
   };
 }
 

@@ -56,3 +56,9 @@ An app that connect to the Github API, and list all public repositories from an 
 **1.0.0 - R E L E A S E**
 
 - Update READE.ME
+
+**1.1.0 - Sorting repositories**
+
+- Added sorting repos
+- UI OptionSelect added
+- Impoving redux store for sort

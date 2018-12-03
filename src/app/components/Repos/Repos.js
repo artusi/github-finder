@@ -1,21 +1,41 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { RepoCard } from "ui";
-
+import { bindActionCreators } from "redux";
+import { requestSortUpdate } from "store/state/github";
+import { RepoCard, OptionSelect } from "ui";
 import styles from "./Repos.module.css";
 
-export function Repos({ github }) {
+// eslint-disable-next-line no-shadow
+export function Repos({ github, requestSortUpdate }) {
   const { error, username, repos } = github;
   const { byId, all } = repos;
   const errorMessage = "Sorry but we couldn't find this user ;-(";
 
   if (error) return <div className={styles.repos}>{errorMessage}</div>;
 
+  const sortOptions = [
+    { value: "name", label: "Name" },
+    { value: "updated", label: "Updated" },
+    { value: "stars", label: "Stars" }
+  ];
+
   return (
     <div className={styles.repos}>
       <div className={styles.disclamer}>
-        {`Hey, ${username} has ${repos.total} repositories.`}
+        <div className={styles.info}>
+          Hey, {username} has {repos.total} repositories.
+        </div>
+        <div className={styles.sorter}>
+          Sort by:
+          <OptionSelect
+            id="sortRepos"
+            options={sortOptions}
+            onChange={value => {
+              requestSortUpdate(value);
+            }}
+          />
+        </div>
       </div>
       <div className={styles.reposList}>
         {all.map(id => {
@@ -40,7 +60,17 @@ const mapStateToProps = state => ({
   github: state.github
 });
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      requestSortUpdate
+    },
+    dispatch
+  );
+}
+
 Repos.propTypes = {
+  requestSortUpdate: PropTypes.func.isRequired,
   github: PropTypes.shape({
     error: PropTypes.bool.isRequired,
     username: PropTypes.string.isRequired,
@@ -48,4 +78,7 @@ Repos.propTypes = {
   }).isRequired
 };
 
-export default connect(mapStateToProps)(Repos);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Repos);

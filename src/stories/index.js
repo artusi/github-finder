@@ -6,7 +6,13 @@ import { linkTo } from "@storybook/addon-links";
 
 import { Welcome } from "@storybook/react/demo";
 
-import { SearchField, SubmitButton, RepoCard, Report } from "../app/ui";
+import {
+  SearchField,
+  SubmitButton,
+  RepoCard,
+  Report,
+  OptionSelect
+} from "../app/ui";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("SearchField")} />
@@ -37,6 +43,20 @@ storiesOf("RepoCard", module)
       stars={10}
     />
   ));
+
+storiesOf("OptionSelect", module).add("basic select", () => (
+  <OptionSelect
+    id="sortRepos"
+    options={[
+      { value: "name", label: "name" },
+      { value: "updated", label: "updated" },
+      { value: "stars", label: "stars" }
+    ]}
+    customClassName="test"
+    initialValue="updated"
+    onChange={action("changed")}
+  />
+));
 
 storiesOf("Report", module).add("basic report with data", () => (
   <Report
