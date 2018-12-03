@@ -10,6 +10,7 @@ An app that connect to the Github API, and list all public repositories from an 
 - Styles: CSS Modules
 - Tests: Jest
 - Router: React router
+- ES6: Destructuring easy way to navigate through object, Arrow Functions easier to write (but not to test ;-)), Promises.
 
 ## Project progression
 
@@ -43,3 +44,7 @@ An app that connect to the Github API, and list all public repositories from an 
 - UI Report added
 - Adding new page /:username/:repository
 - improving tests
+
+**1.0.0 - R E L E A S E**
+
+- Update READE.ME
