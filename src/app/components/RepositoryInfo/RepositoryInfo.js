@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { requestRepository } from "store/state/github";
-import styles from "./RepoInfo.module.css";
+import styles from "./RepositoryInfo.module.css";
 
-export class RepoInfo extends Component {
+export class RepositoryInfo extends Component {
   componentDidMount() {
     const { username, repositoryName } = this.props;
 
@@ -38,7 +38,7 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-RepoInfo.propTypes = {
+RepositoryInfo.propTypes = {
   username: PropTypes.string.isRequired,
   repositoryName: PropTypes.string.isRequired,
   requestRepository: PropTypes.func.isRequired
@@ -47,4 +47,4 @@ RepoInfo.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(RepoInfo);
+)(RepositoryInfo);

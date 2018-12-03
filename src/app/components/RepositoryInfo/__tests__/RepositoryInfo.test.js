@@ -1,10 +1,10 @@
 import React from "react";
-import { RepoInfo } from "../RepoInfo";
+import { RepositoryInfo } from "../RepositoryInfo";
 
-describe("<RepoInfo />", () => {
+describe("<RepositoryInfo />", () => {
   it("renders", () => {
     const wrapper = shallow(
-      <RepoInfo
+      <RepositoryInfo
         requestRepository={() => {}}
         username="artusi"
         repositoryName="another-repo"
@@ -16,7 +16,7 @@ describe("<RepoInfo />", () => {
 
   it("renders > with initial user", () => {
     const wrapper = shallow(
-      <RepoInfo
+      <RepositoryInfo
         requestRepository={() => {}}
         username="artusi"
         repositoryName="another-repo"

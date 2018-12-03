@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Repos /> renders > with initial user 1`] = `
+exports[`<RepositoriesList /> renders > with initial user 1`] = `
 <div
   className="repos"
 >
@@ -8,7 +8,7 @@ exports[`<Repos /> renders > with initial user 1`] = `
 </div>
 `;
 
-exports[`<Repos /> renders 1`] = `
+exports[`<RepositoriesList /> renders 1`] = `
 <div
   className="repos"
 >

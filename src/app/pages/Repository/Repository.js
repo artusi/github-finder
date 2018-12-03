@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Header from "components/Header";
-import RepoInfo from "components/RepoInfo";
+import RepositoryInfo from "components/RepositoryInfo";
 import CommitsList from "components/CommitsList";
 import { SubmitButton } from "ui";
 import styles from "./Repository.module.css";
@@ -13,7 +13,7 @@ export function Repository(props) {
     <div className={styles.repository}>
       <Header />
       <div className={styles.info}>
-        <RepoInfo
+        <RepositoryInfo
           username={params.username}
           repositoryName={params.repository}
         />

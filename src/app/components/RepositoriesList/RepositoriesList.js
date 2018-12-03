@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { requestSortUpdate } from "store/state/github";
 import { RepoCard, OptionSelect } from "ui";
-import styles from "./Repos.module.css";
+import styles from "./RepositoriesList.module.css";
 
 // eslint-disable-next-line no-shadow
-export function Repos({ github, requestSortUpdate }) {
+export function RepositoriesList({ github, requestSortUpdate }) {
   const { error, username, repos } = github;
   const { byId, all } = repos;
   const errorMessage = "Sorry but we couldn't find this user ;-(";
@@ -69,7 +69,7 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-Repos.propTypes = {
+RepositoriesList.propTypes = {
   requestSortUpdate: PropTypes.func.isRequired,
   github: PropTypes.shape({
     error: PropTypes.bool.isRequired,
@@ -81,4 +81,4 @@ Repos.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Repos);
+)(RepositoriesList);

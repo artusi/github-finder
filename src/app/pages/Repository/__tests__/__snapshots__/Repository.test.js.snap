@@ -8,7 +8,7 @@ exports[`<Repository /> renders 1`] = `
   <div
     className="info"
   >
-    <Connect(RepoInfo)
+    <Connect(RepositoryInfo)
       repositoryName="git-finder"
       username="artusi"
     />

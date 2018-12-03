@@ -12,6 +12,8 @@ An app that connect to the Github API, and list all public repositories from an 
 
 ## Project stack
 
+- Node: v10.14.1
+- NPM: 6.4.1
 - Framework: React
 - Styleguide: StoryBook
 - State manager: Redux
@@ -20,7 +22,7 @@ An app that connect to the Github API, and list all public repositories from an 
 - Router: React router
 - ES6: Destructuring easy way to navigate through object, Arrow Functions easier to write (but not to test ;-)), Promises.
 
-## Project progression
+## Project progression (Changelog)
 
 **0.0.1 - Hello World**
 
@@ -66,3 +68,7 @@ An app that connect to the Github API, and list all public repositories from an 
 **1.2.0 - Endless scroll**
 
 - Added endless scroll
+
+**1.2.1 - Endless scroll**
+
+- Improving components names
